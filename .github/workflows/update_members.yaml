@@ -1,0 +1,19 @@
+name: Update members
+
+on:
+  push:
+    branches: [main]
+
+  workflow_dispatch:
+
+jobs:
+  update-members:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: codingpot/github-org-member-manage-action@v1
+        with:
+          gh_token: ${{ secrets.GH_TOKEN }}
+          mode: sync
+          members_filepath: members.yaml
