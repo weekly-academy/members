@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: weekly-academy/github-org-member-manage-action@v1
+      - uses: codingpot/github-org-member-manage-action@v1
         with:
           gh_token: ${{ secrets.GH_TOKEN }}
           mode: write
